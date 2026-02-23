@@ -8,6 +8,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 app.use("/api/notes", notesRoutes);
 
 const startServer = async () => {
